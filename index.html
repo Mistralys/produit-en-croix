@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Calculatrice</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-ui.custom.min.js"></script>
+    <script src="js/calc.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){updateCross();});
+	</script>
+  </head>
+  <body>
+	<div class="container">
+	    <div class="hero-unit">
+			<h1>Calculatrice</h1>
+			<p>Pour mettre de la joie dans le produit en croix ;)<br/>
+			<small class="muted">Astuce: le résultat est mis à jour automatiquement lorsqu'une des valeurs est modifiée.</small></p>
+		</div>
+		<form>
+			<div class="pull-right">Détail du calcul: <span id="detail"></span></div>
+			<div class="row">
+				<div class="span2">
+					Cette valeur...
+				</div>
+				<div class="span2">
+					...donne:
+				</div>
+			</div>
+			<div class="controls controls-row">
+				<input id="val1" class="span2" type="text" value="1" onchange="updateCross();">
+				<input id="val2" class="span2" type="text" value="1" onchange="updateCross();">
+			</div>
+			<div class="row">
+				<div class="span2">
+					Donc celle-ci...
+				</div>
+				<div class="span2">
+					...donne:
+				</div>
+			</div>
+			<div class="controls controls-row">
+				<input id="val3" class="span2" type="text" value="1" onchange="updateCross();">
+				<div id="value-display" class="span2" style="display:inline-block;padding:5px;font-size:20px;font-weight:bold;color:#006600">0</div>
+			</div>
+			<div class="form-actions">
+				<div class="pull-right">
+					<span style="position:relative;top:-3px;">Décimales: </span><input id="option_decimals" type="number" value="2" min="0" onchange="updateCross()" style="width:50px;">
+				</div>
+				<button type="button" class="btn btn-primary" onclick="updateCross();">Recalculer</button>
+				<button type="button" class="btn" onclick="resetCross();">Remettre à zéro</button>
+			</div>
+		</form>
+	</div>
+  </body>
+</html>
